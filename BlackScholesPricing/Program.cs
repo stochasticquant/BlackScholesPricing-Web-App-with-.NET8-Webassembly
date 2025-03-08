@@ -1,11 +1,14 @@
 
 using BlackScholesPricing.Components;
+using BlackScholesPricing.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveWebAssemblyComponents();
+
+builder.Services.AddScoped<BlackScholesService>();
 
 var app = builder.Build();
 
